@@ -1,0 +1,5 @@
+@import "tailwindcss";
+/* index.css */
+@import 'animate.css';
+
+@plugin "daisyui";
