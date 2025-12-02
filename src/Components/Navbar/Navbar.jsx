@@ -51,34 +51,35 @@ const Navbar = () => {
         About
       </NavLink>
 
-      <NavLink
-        to="/contact"
-        onClick={() => setOpen(false)}
-        className={({ isActive }) =>
-          `block px-4 py-2 rounded-md text-base font-semibold transition ${
-            isActive
-              ? "text-blue-600 bg-blue-50"
-              : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
-          }`
-        }
-      >
-        Contact
-      </NavLink>
-
       {user && (
-        <NavLink
-          to="/profile"
-          onClick={() => setOpen(false)}
-          className={({ isActive }) =>
-            `block px-4 py-2 rounded-md text-base font-semibold transition ${
-              isActive
-                ? "text-blue-600 bg-blue-50"
-                : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
-            }`
-          }
-        >
-          My Profile
-        </NavLink>
+        <>
+          <NavLink
+            to="/profile"
+            onClick={() => setOpen(false)}
+            className={({ isActive }) =>
+              `block px-4 py-2 rounded-md text-base font-semibold transition ${
+                isActive
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              }`
+            }
+          >
+            My Profile
+          </NavLink>
+          <NavLink
+            to="/contact"
+            onClick={() => setOpen(false)}
+            className={({ isActive }) =>
+              `block px-4 py-2 rounded-md text-base font-semibold transition ${
+                isActive
+                  ? "text-blue-600 bg-blue-50"
+                  : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+              }`
+            }
+          >
+            Contact
+          </NavLink>
+        </>
       )}
     </>
   );
