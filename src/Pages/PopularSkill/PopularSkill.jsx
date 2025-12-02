@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router";
 import SingleSkill from "../SingleSkill/SingleSkill";
-import Loading from "../Loading/Loading";
 
 const PopularSkill = () => {
-  // Data ebong Loading State set kora holo
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
+
+  useEffect(() => {
     fetch("/skilledData.json")
       .then((res) => res.json())
       .then((resData) => {
@@ -14,10 +14,7 @@ const PopularSkill = () => {
         setIsLoading(false);
       });
   }, []);
-  // console.log(data)
 
-
-  // --- Main Content (Skills Grid) ---
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20">
@@ -36,15 +33,25 @@ const PopularSkill = () => {
           <div className="flex justify-center items-center h-96">
             <div className="w-32 h-32 border-8 border-gray-300 border-t-purple-500 rounded-full animate-spin"></div>
           </div>
-          
-          
-        ) :(<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {data.map((skill) => (
-            <SingleSkill key={skill.skillId} skill={skill} />
-          ))}
-        </div>)
-}
+        ) : (
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {data.slice(0, 8).map((skill) => (
+                <SingleSkill key={skill.skillId} skill={skill} />
+              ))}
+            </div>
 
+            {/* Show All Button */}
+            <div className="text-center mt-8">
+              <Link
+                to="/all-skill"
+                className="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-blue-700 hover:scale-105 transition transform duration-300"
+              >
+                Show All
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </section>
   );

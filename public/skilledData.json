@@ -94,5 +94,101 @@
     "description": "Mastering the art of baking perfect chocolate chip and oatmeal cookies.",
     "image": "https://i.ibb.co.com/mrd9fvH3/pngtree-chunky-double-chocolate-chip-cookies-with-nuts-png-image-15686345.png",
     "category": "Cooking"
+  },
+    {
+    "skillId": 9,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Acoustic guitar classes for complete beginners.",
+    "image": "https://i.ibb.co/C3rhPR7f/istockphoto-1193517744-1024x1024.jpg",
+    "category": "Music"
+  },
+  {
+    "skillId": 10,
+    "skillName": "Spoken English Practice",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 10,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Conversational English sessions for non-native speakers.",
+    "image": "https://i.ibb.co.com/MktJNd2Y/png-clipart-logo-english-language-brand-learning-font-english-school-text-logo-thumbnail.png",
+    "category": "Language"
+  },
+  {
+    "skillId": 11,
+    "skillName": "Introduction to Python Programming",
+    "providerName": "Rajesh Kumar",
+    "providerEmail": "rajesh@skillswap.com",
+    "price": 35,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Fundamental concepts of Python for absolute beginners.",
+    "image": "https://i.ibb.co.com/7tKhr8hM/Python-programming-logo-on-transparent-background-PNG.png",
+    "category": "Technology"
+  },
+  {
+    "skillId": 12,
+    "skillName": "Yoga for Stress Relief",
+    "providerName": "Priya Sharma",
+    "providerEmail": "priya@skillswap.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 7,
+    "description": "Gentle yoga poses and breathing techniques to calm the mind.",
+    "image": "https://i.ibb.co.com/nXhb8JJ/images.png",
+    "category": "Health & Fitness"
+  },
+  {
+    "skillId": 13,
+    "skillName": "Digital Sketching Basics (Procreate)",
+    "providerName": "Mia Chen",
+    "providerEmail": "mia@skillswap.com",
+    "price": 25,
+    "rating": 4.5,
+    "slotsAvailable": 4,
+    "description": "Learn the basics of digital drawing using the Procreate app.",
+    "image": "https://i.ibb.co.com/Z3y6hYb/images-1.jpg",
+    "category": "Art & Design"
+  },
+  {
+    "skillId": 14,
+    "skillName": "Basic Photography Composition",
+    "providerName": "David Lee",
+    "providerEmail": "david@skillswap.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Understanding rule of thirds, leading lines, and framing.",
+    "image": "https://i.ibb.co.com/Fk0Z34LV/images-2.jpg",
+    "category": "Photography"
+  },
+  {
+    "skillId": 15,
+    "skillName": "French Conversation Level A1",
+    "providerName": "Chloe Dubois",
+    "providerEmail": "chloe@skillswap.com",
+    "price": 22,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Initial conversational skills and basic phrases in French.",
+    "image": "https://i.ibb.co.com/6JftksFD/images-3.jpg",
+    "category": "Language"
+  },
+  {
+    "skillId": 16,
+    "skillName": "Home Baking: Classic Cookies",
+    "providerName": "Fatima Begum",
+    "providerEmail": "fatima@skillswap.com",
+    "price": 18,
+    "rating": 4.9,
+    "slotsAvailable": 5,
+    "description": "Mastering the art of baking perfect chocolate chip and oatmeal cookies.",
+    "image": "https://i.ibb.co.com/mrd9fvH3/pngtree-chunky-double-chocolate-chip-cookies-with-nuts-png-image-15686345.png",
+    "category": "Cooking"
   }
 ]

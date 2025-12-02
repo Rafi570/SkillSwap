@@ -12,6 +12,8 @@ import SkilledDetails from "../Pages/SkilledDetails/SkilledDetails";
 import ForgotPassword from "../Pages/ForgotPassword/ForgotPassword";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Contact from "../Components/Contact/Contact";
+import AllSkill from "../Components/AllSkill/AllSkill";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -35,6 +37,14 @@ export const router = createBrowserRouter([
         Component: About,
       },
       {
+        path: "/contact",
+        Component: Contact,
+      },
+      {
+        path: "/all-skill",
+        Component: AllSkill,
+      },
+      {
         path: "/auth/register",
         element: <Register></Register>,
       },
@@ -48,17 +58,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "/update-profile",
-        element: <PrivateRoute>
-          <UpdateProfile></UpdateProfile>
-        </PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <UpdateProfile></UpdateProfile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/skillDetails/:id",
-        element: (
-          <PrivateRoute>
-            <SkilledDetails></SkilledDetails>
-          </PrivateRoute>
-        ),
+        element: <SkilledDetails></SkilledDetails>,
         loader: () => fetch("/skilledData.json"),
         hydrateFallbackElement: <Loading></Loading>,
       },

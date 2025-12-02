@@ -1,4 +1,4 @@
-import React, { useState, use } from "react";
+import React, { useState, useContext } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
 import { FaUserCircle, FaBars, FaTimes } from "react-icons/fa";
@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import logo from "../../assets/logo.png";
 
 const Navbar = () => {
-  const { user, logOut } = use(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -20,6 +20,7 @@ const Navbar = () => {
       .catch(() => toast.error("Logout failed"));
   };
 
+  // --- Ordered Links ---
   const links = (
     <>
       <NavLink
@@ -35,19 +36,7 @@ const Navbar = () => {
       >
         Home
       </NavLink>
-      <NavLink
-        to="/profile"
-        onClick={() => setOpen(false)}
-        className={({ isActive }) =>
-          `block px-4 py-2 rounded-md text-base font-semibold transition ${
-            isActive
-              ? "text-blue-600 bg-blue-50"
-              : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
-          }`
-        }
-      >
-        My Profile
-      </NavLink>
+
       <NavLink
         to="/about"
         onClick={() => setOpen(false)}
@@ -61,6 +50,36 @@ const Navbar = () => {
       >
         About
       </NavLink>
+
+      <NavLink
+        to="/contact"
+        onClick={() => setOpen(false)}
+        className={({ isActive }) =>
+          `block px-4 py-2 rounded-md text-base font-semibold transition ${
+            isActive
+              ? "text-blue-600 bg-blue-50"
+              : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+          }`
+        }
+      >
+        Contact
+      </NavLink>
+
+      {user && (
+        <NavLink
+          to="/profile"
+          onClick={() => setOpen(false)}
+          className={({ isActive }) =>
+            `block px-4 py-2 rounded-md text-base font-semibold transition ${
+              isActive
+                ? "text-blue-600 bg-blue-50"
+                : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+            }`
+          }
+        >
+          My Profile
+        </NavLink>
+      )}
     </>
   );
 
@@ -71,7 +90,7 @@ const Navbar = () => {
       {/* Navbar */}
       <div className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
         <div className="flex justify-between items-center px-4 py-3">
-          {/* Left side (Logo + Mobile toggle) */}
+          {/* Logo + Mobile toggle */}
           <div className="flex items-center gap-3">
             <button
               onClick={() => setOpen(!open)}
@@ -94,12 +113,11 @@ const Navbar = () => {
             </span>
           </div>
 
-          {/* Center Links (Desktop only) */}
+          {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-6">{links}</div>
 
-          {/* Right Section */}
+          {/* Right Section (User / Auth Buttons) */}
           <div className="flex items-center gap-4">
-            {/* User Photo/Icon */}
             {user ? (
               user.photoURL ? (
                 <img
@@ -119,7 +137,6 @@ const Navbar = () => {
               <FaUserCircle size={32} className="text-blue-500" title="Guest" />
             )}
 
-            {/* Desktop Buttons */}
             {user ? (
               <button
                 onClick={handleLogout}

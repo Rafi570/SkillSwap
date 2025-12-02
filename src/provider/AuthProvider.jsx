@@ -11,7 +11,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { app } from "../Firebase/firebase.config";
-
+console.log("Firebase API Key:", import.meta.env.VITE_FIREBASE_API_KEY);
 export const AuthContext = createContext();
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
