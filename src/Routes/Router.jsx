@@ -38,7 +38,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/contact",
-        Component: Contact,
+        element: (
+          <PrivateRoute>
+            <Contact></Contact>
+          </PrivateRoute>
+        )
       },
       {
         path: "/all-skill",
